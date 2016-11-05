@@ -1,2 +1,5 @@
-gh-pages
+.DS_Store
 node_modules
+*.log
+
+index.js

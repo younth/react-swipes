@@ -1,10 +1,38 @@
 {
   "name": "react-swipes",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A react component for building a card or picture slide on mobile",
-  "main": "index.js",
+  "homepage": "https://github.com/younth/react-swipes#readme",
+  "main": "dist/react-swipes.js",
+  "devDependencies": {
+    "ava": "^0.13.0",
+    "babel-cli": "^6.14.0",
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-object-assign": "^6.8.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.14.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
+    "chai": "^3.5.0",
+    "enzyme": "^2.2.0",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "sinon": "^1.17.3",
+    "uglify-js": "^2.7.3",
+    "webpack": "^1.13.2",
+    "webpack-umd-external": "^1.0.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run build-dist-dev && npm run build-dist-prod",
+    "build-dist-dev": "NODE_ENV=development webpack --config webpack.config --colors",
+    "build-dist-prod": "NODE_ENV=production webpack --config webpack.config --progress --colors -p",
+    "build-demo": "browserify ./demo/index.js -t [ babelify --presets [ es2015 stage-0 react ] --plugins [ transform-object-assign ] ] | uglifyjs -cm > ./demo/bundle.min.js",
+    "build-babel": "babel ./src/index.js",
+    "test": "echo \"Comming soon ;)\" && exit 0"
   },
   "repository": {
     "type": "git",
@@ -21,6 +49,6 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/younth/react-swipes/issues"
-  },
-  "homepage": "https://github.com/younth/react-swipes#readme"
+  }
+  
 }
