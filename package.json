@@ -1,10 +1,14 @@
 {
   "name": "react-swipes",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A react component for building a card or picture slide on mobile",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/younth/react-swipes.git"
   },
   "keywords": [
     "react-component",
@@ -14,5 +18,9 @@
     "carousel"
   ],
   "author": "younthxg@gmail.com",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/younth/react-swipes/issues"
+  },
+  "homepage": "https://github.com/younth/react-swipes#readme"
 }
