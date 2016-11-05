@@ -1,0 +1,18 @@
+{
+  "name": "react-swipes",
+  "version": "1.0.1",
+  "description": "A react component for building a card or picture slide on mobile",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-component",
+    "swiper",
+    "swipe",
+    "flipsnap",
+    "carousel"
+  ],
+  "author": "younthxg@gmail.com",
+  "license": "ISC"
+}
