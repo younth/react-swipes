@@ -12,9 +12,9 @@
 
 也就是说，整个组件是基于几年前的swipe.js的，这个库三四年没更新了，看提问作者在12年说要发个swipe2，结果不了了之，导致bug修复很慢，功能支持不全。比如我想做这个效果：
 
-![vip](https://younth.coding.me/static/react/vip.gif)
+![vip](http://younth.coding.me/static/react/vip.gif)
 
-![newuser](https://younth.coding.me/static/react/newuser.gif)
+![newuser](http://younth.coding.me/static/react/newuser.gif)
 
 
 ---
