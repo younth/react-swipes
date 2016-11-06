@@ -1,6 +1,8 @@
 ## react-swipes 
 
-打造最好用的React 移动端卡片滑动 组件
+> 打造最好用的React 移动端卡片滑动 组件
+
+github: https://github.com/younth/react-swipes
 
 ### 为什么要造轮子
 
@@ -83,7 +85,11 @@ swipes不依赖任何css，不会去改变子item的样式，也就是说，css�
             this.state.card.length && this.state.card.map((item, index) => <div className="item"> </div>
         </ReactSwipe>
     </div>
+
+### demo
     
+[点击看在线demo](http://younth.coding.me/demo/swipes/),源码在github里面的demo目录下。
+
 ### todo
 
 - 现在把css完全暴露给使用者了，这样第二层div的宽度（第三层元素的宽度和）需要大家在代码中计算，不是很方便，需要改进。
