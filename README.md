@@ -14,9 +14,9 @@ github: https://github.com/younth/react-swipes
 
 也就是说，整个组件是基于几年前的swipe.js的，这个库三四年没更新了，看提问作者在12年说要发个swipe2，结果不了了之，导致bug修复很慢，功能支持不全。比如我想做这个效果：
 
-![vip](http://younth.coding.me/static/react/vip.gif)
+![vip](./static/vip.gif)
 
-![newuser](http://younth.coding.me/static/react/newuser.gif)
+![newuser](./static/newuser.gif)
 
 
 ---
@@ -93,5 +93,4 @@ swipes不依赖任何css，不会去改变子item的样式，也就是说，css�
 ### todo
 
 - 现在把css完全暴露给使用者了，这样第二层div的宽度（第三层元素的宽度和）需要大家在代码中计算，不是很方便，需要改进。
-
-- 基础的焦点图现在是支持的，但是还没加自动播放...
+- 基础的焦点图现在是支持的，因为定位是卡片滑动，后续考虑加自动播放
