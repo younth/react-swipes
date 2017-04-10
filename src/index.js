@@ -9,6 +9,7 @@ class ReactSwipes extends Component {
   static propTypes = {
     swipeOptions: PropTypes.shape({
       distance: PropTypes.number,
+      currentPoint: PropTypes.number,
       // continuous: PropTypes.bool,
       swTouchstart: PropTypes.func,
       swTouchmove: PropTypes.func,
@@ -46,7 +47,8 @@ class ReactSwipes extends Component {
     const { options, children } = this.props;
     let len = children.length;
     this.swipes = Flipsnap(this.refs.container, {
-        distance: options.distance
+        distance: options.distance,
+        currentPoint: options.currentPoint
     });
 
     // 各个阶段事件监听

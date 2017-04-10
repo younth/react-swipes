@@ -125,7 +125,7 @@ Flipsnap.prototype.init = function(element, opts) {
   self.threshold = opts.threshold || 0;
 
   // set property
-  self.currentPoint = 0;// 当前的Point
+  self.currentPoint = opts.currentPoint || 0;// 当前的Point
   self.currentX = 0;
   self.animation = false;
   self.timerId = null;

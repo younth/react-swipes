@@ -100,7 +100,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	      var len = children.length;
 	      this.swipes = (0, _flipsnap2.default)(this.refs.container, {
-	        distance: options.distance
+	        distance: options.distance,
+	        currentPoint: options.currentPoint
 	      });
 
 	      // 各个阶段事件监听
@@ -156,6 +157,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	ReactSwipes.propTypes = {
 	  swipeOptions: _react.PropTypes.shape({
 	    distance: _react.PropTypes.number,
+	    currentPoint: _react.PropTypes.number,
 	    // continuous: PropTypes.bool,
 	    swTouchstart: _react.PropTypes.func,
 	    swTouchmove: _react.PropTypes.func,

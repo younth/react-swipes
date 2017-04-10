@@ -9,6 +9,7 @@ class Page extends Component {
         // swipes 的配置
         let opt = {
             distance: 230, // 每次移动的距离，卡片的真实宽度，需要计算
+            currentPoint: 1,// 初始位置，默认从0即第一个元素开始
             swTouchend: (ev) => {
                 let data = {
                     moved: ev.moved,
