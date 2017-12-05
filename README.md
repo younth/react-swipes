@@ -88,7 +88,7 @@ swipes不依赖任何css，不会去改变子item的样式，也就是说，css�
 
 ### demo
     
-[点击看在线demo](http://younth.coding.me/demo/swipes/),源码在github里面的demo目录下。
+[点击看在线demo](http://younth.coding.me/mynote/demo/swipes/),源码在github里面的demo目录下。
 
 ### todo
 
