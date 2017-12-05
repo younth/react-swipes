@@ -35,8 +35,8 @@ h3 {
 }
 
 .item {
-    width: 200px;
-    margin: 0 10px;
+    width: 200px;  /*可以计算或者传过去*/
+    margin: 0 10px;/*控制卡片的间距*/
     font-size: 50px;
     text-align: center;
     padding: 50px 0;

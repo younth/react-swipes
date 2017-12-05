@@ -10,12 +10,13 @@ class Page extends Component {
         let opt = {
             distance: 230, // 每次移动的距离，卡片的真实宽度，需要计算
             currentPoint: 1,// 初始位置，默认从0即第一个元素开始
+            autoPlay: true,
             swTouchend: (ev) => {
                 let data = {
                     moved: ev.moved,
                     originalPoint: ev.originalPoint,
                     newPoint: ev.newPoint,
-                    cancelled: ev.cancelled
+                    cancelled: ev.cancelled,
                 }
                 console.log(data);
                 // this.setState({
@@ -25,16 +26,14 @@ class Page extends Component {
         }
 
         return (
-            <section className="demo" id="demo-distance">
+            <section>
                 <h3>distance</h3>
                 <div className="viewport">
                     <div className="flipsnap">
                         <ReactSwipes className="card-slide" options={opt}>
-                            <div className="item">1</div>
-                            <div className="item">2</div>
-                            <div className="item">3</div>
-                            <div className="item">4</div>
-                            <div className="item">5</div>
+                            {
+                                [1,2,3,4,5].map((val, index) => <div className="item" key={index}>{val}</div>)
+                            }
                         </ReactSwipes>
 
                     </div>

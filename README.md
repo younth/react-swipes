@@ -8,11 +8,11 @@ github: https://github.com/younth/react-swipes
 
 目前react component里面 基于移动端轮播/幻灯片 组件，最熟悉应该是`react-swipe`这个库了。且看这个组件的构成：
 
-- react-swipe: 引入swipe-js-iso,创建reat组件
+- react-swipe: 引入swipe-js-iso,创建react组件
 - swipe-js-iso: 基于swipe.js的一个Pull Request
 
 
-也就是说，整个组件是基于几年前的swipe.js的，这个库三四年没更新了，看提问作者在12年说要发个swipe2，结果不了了之，导致bug修复很慢，功能支持不全。比如我想做这个效果：
+也就是说，整个组件是基于几年前的swipe.js的，这个库三四年没更新了，看提问，作者在12年说要发个swipe2，结果不了了之，导致bug修复很慢，功能支持不全。比如我想做这个效果：
 
 ![vip](./static/vip.gif)
 
@@ -27,7 +27,6 @@ github: https://github.com/younth/react-swipes
 ### 解决方案
 
 不用react的情况下，swiper.js 是个不错的选择，但是考虑这个库太大了(5000行+)，为一个卡片滑动实在不值得。最后参考了flipsnap.js的设计，搞了个react-swipes，为的就是快速方便的实现上面这种卡片切换效果。
-
 
 ### 安装
 

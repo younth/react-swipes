@@ -1,12 +1,7 @@
 /**
- * flipsnap.js
- *
- * @version  0.6.3
- * @url http://hokaccha.github.com/js-flipsnap/
- *
- * Copyright 2011 PixelGrid, Inc.
- * Licensed under the MIT License:
- * http://www.opensource.org/licenses/mit-license.php
+ * flipsnap
+ * 支持自动播放
+ * 支持切换动画
  */
 
 // 支持模块化引入
@@ -122,7 +117,10 @@ Flipsnap.prototype.init = function(element, opts) {
   self.disableTouch = (opts.disableTouch === undefined) ? false : opts.disableTouch;
   self.disable3d = (opts.disable3d === undefined) ? false : opts.disable3d;
   self.transitionDuration = (opts.transitionDuration === undefined) ? '350ms' : opts.transitionDuration + 'ms';
-  self.threshold = opts.threshold || 0;
+  self.threshold = opts.threshold || 80; //this.cardS.width / 2;
+
+  self.autoPlay = opts.autoPlay || false;
+  self.interval = 1200;
 
   // set property
   self.currentPoint = opts.currentPoint || 0;// 当前的Point
@@ -157,6 +155,9 @@ Flipsnap.prototype.init = function(element, opts) {
   eventTypes.forEach(function(type) {
     self.element.addEventListener(events.start[type], self, false);
   });
+
+  // 检查自动播放
+  self._checkNeedAutoPlay();
 
   return self;
 };
@@ -264,6 +265,7 @@ Flipsnap.prototype.moveToPoint = function(point, transitionDuration) {
   transitionDuration = transitionDuration === undefined
     ? self.transitionDuration : transitionDuration + 'ms';
 
+  // 移动的起始位置
   var beforePoint = self.currentPoint;
 
   // 初始时候未定义 ，取当前的 point 0
@@ -319,7 +321,8 @@ Flipsnap.prototype._setX = function(x, transitionDuration) {
 // 通过touchStart方法记录下触摸开始点开始时间等参数，并触发fstouchstart事件
 Flipsnap.prototype._touchStart = function(event, type) {
   var self = this;
-
+  // 停止自动播放
+  self._clearAutoPlay();
   // 禁止touch/正在滑动 直接退出
   if (self.disableTouch || self.scrolling || gestureStart) {
     return;
@@ -427,7 +430,7 @@ Flipsnap.prototype._touchEnd = function(event, type) {
   if (!self.scrolling) {
     return;
   }
-
+  // currentX 为移动的坐标 / 移动的卡片距离
   var newPoint = -self.currentX / self._distance;
   newPoint =
     (self.directionX > 0) ? Math.ceil(newPoint) :
@@ -453,7 +456,7 @@ Flipsnap.prototype._touchEnd = function(event, type) {
     newPoint: newPoint,
     cancelled: false
   });
-
+  // 移动到新的point
   self.moveToPoint(newPoint);
 };
 
@@ -554,6 +557,26 @@ Flipsnap.prototype._triggerEvent = function(type, bubbles, cancelable, data) {
   // js 事件触发器
   return self.element.dispatchEvent(ev);
 };
+
+Flipsnap.prototype._checkNeedAutoPlay = function() {
+  var self = this;
+  if (self.autoPlay) {
+    self._clearAutoPlay();
+    self.autoPlayTimer = setInterval(() => {
+      if (self.currentPoint === 4) {
+        self.moveToPoint(0, 0);
+        self.currentPoint = 0;
+      } else {
+        self.moveToPoint(self.currentPoint + 1);
+      }
+    }, parseInt(self.interval));
+  }
+}
+Flipsnap.prototype._clearAutoPlay = function() {
+ this.autoPlayTimer && clearInterval(this.autoPlayTimer);
+}
+
+
 
 // 获取触摸目标在页面中的坐标
 function getPage(event, page) {
