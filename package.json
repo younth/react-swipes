@@ -1,6 +1,6 @@
 {
   "name": "react-swipes",
-  "version": "1.0.5",
+  "version": "1.0.8",
   "description": "A react component for building a card or picture slide on mobile",
   "homepage": "https://github.com/younth/react-swipes#readme",
   "main": "dist/react-swipes.js",
