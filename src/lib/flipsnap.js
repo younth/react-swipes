@@ -121,6 +121,7 @@ Flipsnap.prototype.init = function(element, opts) {
 
   self.autoPlay = opts.autoPlay || false;
   self.interval = 1200;
+  self.loop = self.autoPlay ? true : opts.loop;
 
   // set property
   self.currentPoint = opts.currentPoint || 0;// 当前的Point
@@ -278,7 +279,9 @@ Flipsnap.prototype.moveToPoint = function(point, transitionDuration) {
     self.currentPoint = 0;
   }
   else if (point > self._maxPoint) {
-    self.currentPoint = self._maxPoint;
+    // 超过maxPoint
+    self.currentPoint = self.loop ? 0 : self._maxPoint;
+    // self.currentPoint = self._maxPoint;
   }
   else {
     self.currentPoint = parseInt(point, 10);

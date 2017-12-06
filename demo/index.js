@@ -11,6 +11,7 @@ class Page extends Component {
             distance: 230, // 每次移动的距离，卡片的真实宽度，需要计算
             currentPoint: 1,// 初始位置，默认从0即第一个元素开始
             autoPlay: true,
+            loop: true,
             swTouchstart: (ev) => {
 
             },

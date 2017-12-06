@@ -49,7 +49,8 @@ class ReactSwipes extends Component {
     this.swipes = Flipsnap(this.refs.container, {
         distance: options.distance,
         currentPoint: options.currentPoint,
-        autoPlay: options.autoPlay
+        autoPlay: options.autoPlay,
+        loop: options.loop,
     });
 
     // 各个阶段事件监听
