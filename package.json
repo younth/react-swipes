@@ -1,6 +1,6 @@
 {
   "name": "react-swipes",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A react component for building a card or picture slide on mobile",
   "homepage": "https://github.com/younth/react-swipes#readme",
   "main": "dist/react-swipes.js",
@@ -30,7 +30,7 @@
     "build": "npm run build-dist-dev && npm run build-dist-prod",
     "build-dist-dev": "NODE_ENV=development webpack --config webpack.config --colors",
     "build-dist-prod": "NODE_ENV=production webpack --config webpack.config --progress --colors -p",
-    "build-demo": "browserify ./demo/index.js -t [ babelify --presets [ es2015 stage-0 react ] --plugins [ transform-object-assign ] ]  > ./demo/bundle.min.js",
+    "build-demo": "browserify ./demo/index.js -t [ babelify --presets [ es2015 stage-0 react ] --plugins [ transform-object-assign ] ] | uglifyjs -cm > ./demo/bundle.min.js",
     "build-babel": "babel ./src/index.js",
     "test": "echo \"Comming soon ;)\" && exit 0"
   },

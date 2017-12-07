@@ -121,7 +121,7 @@ Flipsnap.prototype.init = function(element, opts) {
 
   self.autoPlay = opts.autoPlay || false;
   self.interval = 1200;
-  self.loop = self.autoPlay ? true : opts.loop;
+  self.loop = opts.loop || false;
 
   // set property
   self.currentPoint = opts.currentPoint || 0;// 当前的Point
@@ -446,7 +446,7 @@ Flipsnap.prototype._touchEnd = function(event, type) {
   }
   else if (newPoint > self._maxPoint) {
     // 大于 _maxPoint时候，不能继续往右，回到最后最后一个位置
-    newPoint = self._maxPoint;
+    newPoint = self.loop ? 0 : self._maxPoint;
   }
 
   if (Math.abs(self.startPageX - self.basePageX) < self.threshold) {
