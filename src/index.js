@@ -2,7 +2,8 @@
  * flipsnap库——react版本 用于实现轮播图，卡片切换等动效
  * author: http://younth.github.io/
  */
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Flipsnap from './lib/flipsnap';
 
 class ReactSwipes extends Component {
