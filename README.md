@@ -2,8 +2,6 @@
 
 > 打造最好用的React 移动端卡片滑动 组件。已支持卡片自动播放，配置加入 `autoPlay` 参数即可。
 
-github: https://github.com/younth/react-swipes
-
 ### 为什么要造轮子
 
 目前react component里面 基于移动端轮播/幻灯片 组件，最熟悉应该是`react-swipe`这个库了。且看这个组件的构成：
@@ -97,7 +95,7 @@ swipes不依赖任何css，不会去改变子item的样式，也就是说，css�
 
 ### demo
     
-[点击看在线demo](http://younth.coding.me/mynote/demo/swipes/),源码在github里面的demo目录下。
+[sandbox demo](https://codesandbox.io/s/6xx1v0xo2z)
 
 ### todo
 
